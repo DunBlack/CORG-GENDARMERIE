@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 248 250 252; /* #F8FAFC */
+  --foreground: 15 23 42; /* #0F172A */
+  --muted: 241 245 249; /* #F1F5F9 */
+  --muted-foreground: 100 116 139; /* #64748B */
+  --popover: 255 255 255; /* #FFFFFF */
+  --popover-foreground: 15 23 42; /* #0F172A */
+  --card: 255 255 255; /* #FFFFFF */
+  --card-foreground: 15 23 42; /* #0F172A */
+  --border: 226 232 240; /* #E2E8F0 */
+  --input: 226 232 240; /* #E2E8F0 */
+  --primary: 30 58 138; /* #1E3A8A */
+  --primary-foreground: 248 250 252; /* #F8FAFC */
+  --secondary: 241 245 249; /* #F1F5F9 */
+  --secondary-foreground: 15 23 42; /* #0F172A */
+  --accent: 241 245 249; /* #F1F5F9 */
+  --accent-foreground: 15 23 42; /* #0F172A */
+  --destructive: 239 68 68; /* #EF4444 */
+  --destructive-foreground: 248 250 252; /* #F8FAFC */
+  --ring: 30 58 138; /* #1E3A8A */
+  --radius: 0.5rem;
+  
+  /* Police colors */
+  --police-blue: 30 58 138; /* #1E3A8A */
+  --police-light: 59 130 246; /* #3B82F6 */
+}
+
+.dark {
+  --background: 15 23 42; /* #0F172A */
+  --foreground: 248 250 252; /* #F8FAFC */
+  --muted: 30 41 59; /* #1E293B */
+  --muted-foreground: 148 163 184; /* #94A3B8 */
+  --popover: 15 23 42; /* #0F172A */
+  --popover-foreground: 248 250 252; /* #F8FAFC */
+  --card: 15 23 42; /* #0F172A */
+  --card-foreground: 248 250 252; /* #F8FAFC */
+  --border: 30 41 59; /* #1E293B */
+  --input: 30 41 59; /* #1E293B */
+  --primary: 59 130 246; /* #3B82F6 */
+  --primary-foreground: 15 23 42; /* #0F172A */
+  --secondary: 30 41 59; /* #1E293B */
+  --secondary-foreground: 248 250 252; /* #F8FAFC */
+  --accent: 30 41 59; /* #1E293B */
+  --accent-foreground: 248 250 252; /* #F8FAFC */
+  --destructive: 220 38 38; /* #DC2626 */
+  --destructive-foreground: 248 250 252; /* #F8FAFC */
+  --ring: 59 130 246; /* #3B82F6 */
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+/* Drag and drop styles */
+.drag-over {
+  border: 2px dashed hsl(var(--police-light)) !important;
+  background-color: hsl(239 246 255) !important; /* #EFF6FF */
+}
+
+.dragging {
+  opacity: 0.5;
+  transform: rotate(5deg);
+}
+
+.officer-slot {
+  min-height: 60px;
+  transition: all 0.2s ease;
+}
+
+.vehicle-card {
+  transition: all 0.3s ease;
+}
+
+.vehicle-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.action-button {
+  transition: all 0.2s ease;
+}
+
+.action-button:hover {
+  transform: translateY(-1px);
+}
+
+.status-indicator {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+/* Custom button colors */
+.btn-patrol {
+  @apply bg-green-500 hover:bg-green-600 text-white;
+}
+
+.btn-return {
+  @apply bg-blue-500 hover:bg-blue-600 text-white;
+}
+
+.btn-asl {
+  @apply bg-amber-500 hover:bg-amber-600 text-white;
+}
+
+.btn-intervention {
+  @apply bg-red-500 hover:bg-red-600 text-white;
+}
